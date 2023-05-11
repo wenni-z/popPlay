@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, shrink-to-fit=no" />
+    <link rel="shortcut icon" type="text/css" href="" />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/dialog.min.css" />
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/lib-flexible.js"></script>
+    <title></title>
+    <style>
+      /* 号码滚动条 */
+      .container {
+        position: relative;
+        top: -0.8rem;
+        display: flex;
+        flex: 1;
+        white-space: nowrap;
+        -webkit-animation: 60s scroll linear infinite normal;
+        animation: 60s scroll linear infinite normal;
+      }
+
+      .container-ul {
+        display: flex;
+        margin: 1.2rem 0 0 1rem;
+        width: 76rem;
+        color: #fff;
+        font-size: 0.35rem;
+        font-weight: 800;
+      }
+
+      .horse-light-item {
+        margin: 0 0.5rem 0 0;
+        background-color: rgba(0, 0, 0, 0.25);
+        line-height: 0.7rem;
+        padding: 0 1rem;
+        border-radius: 0.5rem;
+      }
+
+      .absolute {
+        position: absolute;
+        background-color: #f72e09;
+        z-index: 10;
+      }
+
+      @keyframes scroll {
+        0% {
+          -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+        }
+
+        100% {
+          -webkit-transform: translateX(-76rem);
+          transform: translateX(-76rem);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app" class="app" ref="app">
+      <!-- <template v-if="isInit"> -->
+      <top-msg></top-msg>
+
+      <!--头图-->
+      <img class="w-h-100" src="resources/banner.png" alt="" />
+
+      <!-- 号码滚动条 -->
+      <div style="width: 100%; overflow: hidden">
+        <div class="container" id="wrapper">
+          <ul class="container-ul" id="content">
+            <li class="horse-light-item">136****9309已领取腾讯会员</li>
+            <li class="horse-light-item">164****1612已领取网易云音乐会员</li>
+            <li class="horse-light-item">174****4874已领取饿了么红包</li>
+            <li class="horse-light-item">182****5612已领取芒果TV会员</li>
+            <li class="horse-light-item">135****4033已领取美团代金卷</li>
+            <li class="horse-light-item">136****7578已领取芒果TV会员</li>
+            <li class="horse-light-item">136****2781已领取腾讯会员</li>
+            <li class="horse-light-item">134****9343已领取腾讯会员</li>
+            <li class="horse-light-item">134****8200已领取饿了么红包</li>
+            <li class="horse-light-item">184****8215已领取美团代金卷</li>
+            <li class="horse-light-item">172****2562已领取网易云音乐会员</li>
+            <li class="horse-light-item">184****4590已领取腾讯会员</li>
+            <li class="horse-light-item">172****7125已领取饿了么红包</li>
+            <li class="horse-light-item">182****2156已领取美团代金卷</li>
+            <li class="horse-light-item">182****8868已领取腾讯会员</li>
+            <li class="horse-light-item">136****8876已领取芒果TV会员</li>
+            <li class="horse-light-item">157****2032已领取网易云音乐会员</li>
+            <li class="horse-light-item">138****6964已领取腾讯会员</li>
+            <li class="horse-light-item">166****4106已领取饿了么红包</li>
+            <li class="horse-light-item">150****8797已领取美团代金卷</li>
+            <!--  -->
+            <li class="horse-light-item">136****9309已领取腾讯会员</li>
+            <li class="horse-light-item">164****1612已领取网易云音乐会员</li>
+            <li class="horse-light-item">174****4874已领取饿了么红包</li>
+            <li class="horse-light-item">182****5612已领取芒果TV会员</li>
+            <li class="horse-light-item">135****4033已领取美团代金卷</li>
+            <li class="horse-light-item">136****7578已领取芒果TV会员</li>
+            <li class="horse-light-item">136****2781已领取腾讯会员</li>
+            <li class="horse-light-item">134****9343已领取腾讯会员</li>
+            <li class="horse-light-item">134****8200已领取饿了么红包</li>
+            <li class="horse-light-item">184****8215已领取美团代金卷</li>
+            <li class="horse-light-item">172****2562已领取网易云音乐会员</li>
+            <li class="horse-light-item">184****4590已领取腾讯会员</li>
+            <li class="horse-light-item">172****7125已领取饿了么红包</li>
+            <li class="horse-light-item">182****2156已领取美团代金卷</li>
+            <li class="horse-light-item">182****8868已领取腾讯会员</li>
+            <li class="horse-light-item">136****8876已领取芒果TV会员</li>
+            <li class="horse-light-item">157****2032已领取网易云音乐会员</li>
+            <li class="horse-light-item">138****6964已领取腾讯会员</li>
+            <li class="horse-light-item">166****4106已领取饿了么红包</li>
+            <li class="horse-light-item">150****8797已领取美团代金卷</li>
+          </ul>
+        </div>
+      </div>
+
+      <!--输入框-->
+      <template>
+        <div class="center-position" style="
+              margin: -0.1rem auto 1.5rem auto;
+              background-color: #fff;
+              padding: 0.8rem 0 0.8rem 0;
+              border-radius: 0.4rem;
+              width: 9rem;
+              text-align: center;
+            ">
+          <!--号码框-->
+          <div class="input-frame">
+            <input type="tel" class="phone-input" maxlength="11" placeholder="请输入手机号码" v-model="phone" />
+          </div>
+          <!--验证码框-->
+          <!-- <div v-if="isGetCode" class="input-frame code-frame">
+            <input type="number" placeholder="请输入验证码" maxlength="6"
+              oninput="if(value.length>6)value=value.substring(0,6)" v-model="codeValue" @click.stop />
+            <button v-if="isOverdue" type="button" class="code-input__btn" @click.stop="clickGetCode()">
+              获取验证码
+            </button>
+            <button v-else type="button" class="code-input__btn">
+              {{codeTime}}s 重发
+            </button>
+          </div> -->
+          <!--按钮-->
+          <div>
+            <img src="resources/btn-get.png" alt="" class="btn-scale btn-normal" @click="clickGetCode()" />
+
+            <img style="
+                  width: 15%;
+                  position: absolute;
+                  right: 1.6rem;
+                  top: 2.8rem;
+                " src="resources/sz.png" alt="" class="btn-scale btn-normal" @click="clickGetCode()" />
+          </div>
+
+          <!--文字说明-->
+          <div class="private-center" style="margin: 0.7rem 0 0 0">
+            <!--后台配置的showPriPolicy-->
+            <template v-if="showPriPolicy === 1 || showPriPolicy === '1'">
+              <template v-if="selectType == 0">
+                <img class="vertical-center" style="width: 18px" @click="clickSelectType()"
+                  src="resources/ic-select-not.png" alt="" />
+              </template>
+              <template v-else>
+                <img class="vertical-center" style="width: 18px" @click="clickSelectType()"
+                  src="resources/ic-select.png" alt="" />
+              </template>
+              <div class="vertical-center private-center__row">
+                我已阅读并同意
+                <span class="private-center__link" @click="clickActivities()">活动规则</span>、
+                <span class="private-center__link" @click="clickPrivacy()">隐私条款</span>
+                等协议
+              </div>
+            </template>
+            <!--资费说明-->
+            <div class="private-center-msg">
+              <div class="private-center-msg__inner">
+                <div style="text-align: center">
+                  升级众创会员，月月享会员<br>资费：19.9元/月
+                </div>
+              </div>
+              <!--底部箭头-->
+              <div v-if="showMsg && showMsg.length > 0" class="align-center">
+                <span
+                  :class="datas.isCenterDown ? 'center-icon__down__bottom center-icon__up' : 'center-icon__down__bottom'"
+                  ref="downIcon"
+                  @click="()=>{let div=this.$refs.downIcon;this.datas.isCenterDown=!this.datas.isCenterDown;}">
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+
+      <!--底图-->
+      <div class="align-center">
+        <img style="width: 92%" src="resources/three.png" alt="" />
+      </div>
+
+      <div class="align-center" style="margin: 0.5rem 0 1rem 0">
+        <img style="width: 92%" src="resources/three-1.png" alt="" />
+      </div>
+
+      <!--底部添加活动说明-->
+      <div class="bottom-content" style="color: #ffffff; background-color: #fff">
+        <div class="bottom-content__title" style="background: #ec4e4a">
+          活动规则
+        </div>
+        <div class="bottom-content__text" style="color: #f05d55">
+          <b>1、活动对象：</b>2G/3G/4G/5G手机用户。 <br>
+          <b>2、活动内容：</b>
+          活动期间凡首次在本页面成功开通业务（业务资费：19.9元/月），即可获得热门会员月卡（N选1）和福利礼包。 <br><b>【商品权益说明】</b>
+          <br>用户每月可领取腾讯视频月卡、爱奇艺月卡、优酷月卡、芒果TV月卡、哗哩哗哩大会员月卡、搜狐视频黄金VIP月卡、作业帮月卡、网易云音乐月卡、QQ音乐月卡、酷我音乐月卡、喜马拉雅巅峰会员月卡、酷狗豪华VIP月卡中的任意一张。
+          <br><b>3、礼品发放：</b>
+          <br><b>会员权益兑换方式：</b>点击进入<a
+            href='https://pop.play.cn/act/vip/#/home/133386'>福利兑换中心</a>-选择您需要的会员权益-点击“立即兑换”即可兑换成功，可前往权益所在平台激活使用；
+          <br>温馨提示：</b>
+          使用相关权益时，请遵守相应平台的用户服务协议和权益使用协议，如违反相关协议规定，运营商和联合权益提供方均有权单独进行处理，包括但不限于中止或终止提供其所属平台的服务及要求侵权赔偿等。
+          <br><b>4、注意事项：</b>
+          <br>（1）每个手机号仅限参与一次，如当月不退订，次月自动续订。
+          <br>（2）本业务退订后视作放弃本活动福利礼品，未充值到账或未兑换的礼品将不再发放（福利礼品包括会员权益、流量等）。
+          <br>（3）已开通本业务的老用户不可再次参与本次推广活动。
+          <br>（4）成功开通本业务，权益领取周期为自然月，热门权益需用户手动领取，如当月热门权益未领取，次月无法补领上月权益，请及时领取。
+          <br>（5）退订业务之后，请一定要到支付宝上去解绑自动扣费哦。
+          <br><b>5、如有任何问题：</b>请加入QQ群 723470872 或拨打客服热线4008689689联系我们。
+        </div>
+        <div class="bottom-content__link"></div>
+      </div>
+
+      <!--底部预留的浮动区域-->
+      <template v-if="isFixed">
+        <div v-if="isGetCode" style="height: 5rem"></div>
+        <div v-else style="height: 4rem"></div>
+      </template>
+
+      <!--底部文字说明-->
+      <bottom-price-msg style="color: white"></bottom-price-msg>
+
+      <!--浮动框-->
+      <template v-if="isFixed">
+        <div class="bottom-fixed">
+          <!--输入框-->
+          <div class="input-frame">
+            <input type="tel" class="phone-input" maxlength="11" placeholder="请输入手机号码" v-model="phone" />
+          </div>
+          <!--验证码框-->
+          <!-- <div v-if="isGetCode" class="input-frame code-frame">
+            <input type="number" placeholder="请输入验证码" maxlength="6" v-model="codeValue"
+              oninput="if(value.length>6)value=value.substring(0,6)" @click.stop />
+            <button v-if="isOverdue" type="button" class="code-input__btn" @click.stop="clickGetCode()">
+              获取验证码
+            </button>
+            <button v-else type="button" class="code-input__btn">
+              {{codeTime}}s 重发
+            </button>
+          </div> -->
+          <!--按钮-->
+          <img class="btn-normal btn-scale" @click="clickGetCode()" src="resources/btn-get.png" alt="" />
+        </div>
+      </template>
+
+      <!--订单结果提示-->
+      <!-- <div v-if="showResultDialog" id="tipsShowDialog" style="width: 100%;height: 100%;">
+        <div class="dialog-overlay__fixed">
+          <div class="dialog-popup__fixed" @click="clickCloseResultDialog()">
+            <div class="dialog-scale-big"
+              style="width: 100%; height: 100vh; display: flex; align-items: center; justify-content: center;">
+              <div v-if="orderSuc" class="tips-show__d">
+                <img src="resources/success-icon.png" class="tips-show__pic"
+                  alt=''>
+                <p class="tips-show__text">
+                  订单已提交
+                  <br>(成功开通后可获得权益奖励，开通结果以短信为准)
+                </p>
+              </div>
+
+              <div v-else class="tips-show__d">
+                <img src="resources/tips-show-fail.png" class="tips-show__pic"
+                  alt=''>
+                <p class="tips-show__text">抱歉，订购失败，请稍后再试~</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <!-- </template> -->
+    </div>
+
+    <script src="js/vjs-v2.6.min.js"></script>
+    <script src="js/vue-auto.min.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+      // vueAutoSet("isCenterDown", false); //中间资费说明操作
+
+      /*页面滚动事件*/
+      document.addEventListener("scroll", function () {
+        let offsetY = window.scrollY;
+        if (vm.screenHeight > 0 && offsetY > 0) {
+          //距离顶部距离开启浮动
+          let h = vm.screenHeight * 0.9;
+          if (offsetY >= h) {
+            //开始浮动
+            vm.isFixed = true;
+          } else {
+            //隐藏浮动
+            vm.isFixed = false;
+          }
+        }
+      });
+    </script>
+  </body>
+
+</html>
