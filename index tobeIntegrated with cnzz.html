@@ -8,6 +8,35 @@
     <link rel="shortcut icon" type="text/css" href="" />
     <link rel="stylesheet" type="text/css" href="css/base.css" />
     <link rel="stylesheet" type="text/css" href="css/dialog.min.css" />
+    <script>
+         (function(w, d, s, q, i) {
+         w[q] = w[q] || [];
+         var f = d.getElementsByTagName(s)[0],j = d.createElement(s);
+         j.async = true;
+         j.id = 'beacon-aplus';
+         j.src = 'https://d.alicdn.com/alilog/mlog/aplus/' + i + '.js';
+         f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'aplus_queue', '203467608');
+      
+          //集成应用的appKey
+          aplus_queue.push({
+            action: 'aplus.setMetaInfo',
+            arguments: ['appKey', '645c8c82ba6a5259c44eb6e1']
+          });
+        /************************以下内容为可选配置内容****************************/
+         //sdk提供手动pv发送机制，启用手动pv(即关闭自动pv)，需设置aplus-waiting=MAN;
+        //注意：由于单页面路由改变时不会刷新页面，无法自动发送pv，所以对于单页应用，强烈建议您关闭自动PV, 手动控制PV事件的发送时机N": N取值为300-3000之间的整数值 , 所有日志指令在SDK初始化完成后的N毫秒内将被hold在指令队列, 直至N毫秒等待结束；"MAN": 取消自动化PV日志采集. 设置为MAN之后, 所有PV日志均需手动触发, 但其他类型的事件日志不受影响
+        // aplus_queue.push({
+        //     action: 'aplus.setMetaInfo',
+        //     arguments: ['aplus-waiting', 'MAN']
+        //   });
+        //   //是否开启调试模式 
+        //   aplus_queue.push({
+        //     action: 'aplus.setMetaInfo',
+        //     arguments: ['DEBUG', true]
+        //   });      
+         /******************************************************************/
+    </script>
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/lib-flexible.js"></script>
     <title></title>
