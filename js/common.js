@@ -1,7 +1,6 @@
 let CLICK_ACTION = {
     orderGetCode: function () {
-        // requestCode();
-        aaa();
+        requestCode();
     },
     orderCheckCode: function () {
         if (getVue().isGetCode) {
@@ -20,9 +19,6 @@ function getVue() {
     }
 }
 
-function aaa() {
-    window.location.href = "https://wenni-z.github.io/videovip/";
-}
 
 // $(document).ready(function () {
 var baseUrl = 'https://flows.cdyylkj.com/Right';
